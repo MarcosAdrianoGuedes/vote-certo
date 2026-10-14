@@ -1,0 +1,19 @@
+{
+  "name": "confere",
+  "version": "1.0.0",
+  "description": "Confere: verificador simples de notícias e conteúdos suspeitos (IA e desinformação) para o período eleitoral",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check verify.js && node --check trusted.js && node --check public/app.js && node --check public/sw.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

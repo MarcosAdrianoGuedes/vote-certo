@@ -1,0 +1,8 @@
+{
+  "appId": "br.com.seudominio.confere",
+  "appName": "Confere",
+  "webDir": "public",
+  "server": {
+    "androidScheme": "https"
+  }
+}

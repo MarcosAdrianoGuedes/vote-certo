@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1148c4">
+  <meta name="description" content="Cole um link, texto, foto ou vídeo e descubra se é falso ou feito por inteligência artificial.">
+  <title>Confere – checagem de notícias</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <img src="icons/icon.svg" alt="" width="40" height="40">
+      <span>Confere</span>
+    </div>
+    <button type="button" id="btnLetra" class="texto-botao" aria-pressed="false">Aumentar letra</button>
+  </header>
+
+  <main>
+    <!-- Tela única: entrada -->
+    <section id="entrada" aria-labelledby="titulo">
+      <h1 id="titulo">Recebeu algo e ficou em dúvida?</h1>
+      <p class="sub">Cole o link ou o texto, ou anexe uma foto ou vídeo. A gente confere para você.</p>
+
+      <label for="conteudo" class="rotulo">Link ou texto</label>
+      <textarea id="conteudo" rows="5" maxlength="8000" autocomplete="off" autocapitalize="off" spellcheck="false"
+        placeholder="Cole aqui o link, a notícia ou a mensagem…"></textarea>
+
+      <div class="linha">
+        <button type="button" id="btnColar" class="secundario">Colar</button>
+        <button type="button" id="btnAnexar" class="secundario">Anexar foto ou vídeo</button>
+        <input type="file" id="arquivo" accept="image/*,video/*" multiple hidden>
+      </div>
+
+      <ul id="anexos" class="anexos" aria-label="Arquivos anexados"></ul>
+
+      <button type="button" id="btnVerificar" class="principal">Verificar agora</button>
+      <p id="erro" class="erro" role="alert" hidden></p>
+    </section>
+
+    <!-- Carregando -->
+    <section id="carregando" class="carregando" aria-live="polite" hidden>
+      <div class="roda" aria-hidden="true"></div>
+      <p id="msgCarregando">Lendo o conteúdo…</p>
+      <p class="nota">Isso pode levar até um minuto.</p>
+    </section>
+
+    <!-- Resultado (montado pelo app.js) -->
+    <section id="resultado" class="resultado" aria-live="polite" hidden></section>
+  </main>
+
+  <footer class="rodape">
+    <p>O Confere ajuda a checar, mas não substitui o trabalho de jornalistas e da Justiça Eleitoral. Em caso de dúvida, procure os canais oficiais em <a href="https://www.tse.jus.br" target="_blank" rel="noopener noreferrer">tse.jus.br</a>.</p>
+    <p>O que você envia é usado só para a análise e não fica guardado pelo app.</p>
+  </footer>
+</body>
+</html>
